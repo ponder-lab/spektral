@@ -84,7 +84,7 @@ class DMoNPool(SRCPool):
         bias_regularizer=None,
         kernel_constraint=None,
         bias_constraint=None,
-        **kwargs
+        **kwargs,
     ):
         super().__init__(
             k=k,
@@ -97,7 +97,7 @@ class DMoNPool(SRCPool):
             bias_regularizer=bias_regularizer,
             kernel_constraint=kernel_constraint,
             bias_constraint=bias_constraint,
-            **kwargs
+            **kwargs,
         )
 
         self.k = k
@@ -162,7 +162,6 @@ class DMoNPool(SRCPool):
         return i_pool
 
     def modularity_loss(self, a, s, a_pool):
-
         if K.is_sparse(a):
             n_edges = tf.cast(len(a.values), dtype=s.dtype)
 
