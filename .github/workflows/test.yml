@@ -9,8 +9,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # The environment the corpus measures this code in: Python 3.10 with TensorFlow 2.9.3 and
-        # NumPy 1.23.5 on Linux. TensorFlow 2.9.3 has no wheel for Python 3.11 or for macOS on arm64.
+        # Python 3.10, TensorFlow 2.9.3 and NumPy 1.23.5, as the corpus measures it, on Linux, with
+        # scipy below 1.11 and networkx below 3 (below), where all of this code still runs.
+        # TensorFlow 2.9.3 has no wheel for Python 3.11 or for macOS on arm64.
         python-version: ["3.10"]
         os: [ubuntu-latest]
 
