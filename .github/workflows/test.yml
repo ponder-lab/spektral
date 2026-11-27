@@ -30,9 +30,6 @@ jobs:
         python -m pip install "tensorflow==2.9.3" "numpy==1.23.5" "scipy<1.11" "networkx<3" .
     - name: Test with pytest and coverage
       run: |
-        # test_qm7 and test_flickr download from hosts that no longer serve the files (deepchem's
-        # qm7b.mat answers 400; Flickr's Google Drive file is not the archive), so they cannot pass.
-        python -m coverage run --source=. -m pytest \
-          --deselect tests/test_datasets.py::test_qm7 --deselect tests/test_datasets.py::test_flickr
+        python -m coverage run --source=. -m pytest
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
