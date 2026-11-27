@@ -24,7 +24,7 @@ jobs:
         python -m pip install pytest coverage codecov
     - name: Install Spektral
       run: |
-        python -m pip install "tensorflow<2.16" .
+        python -m pip install "tensorflow<2.16" "scipy<1.14" "networkx<3" .
     - name: Test with pytest and coverage
       run: |
         python -m coverage run --source=. -m pytest
